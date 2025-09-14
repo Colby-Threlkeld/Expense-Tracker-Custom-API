@@ -14,7 +14,11 @@ CRUD operations for expense tracking
 
 Clean project structure with controllers, routes, models, middleware, and utils
 
-## 🚀 Features
+## - API Documentation -
+
+See [API_DOCS.md](./API_DOCS.md) for full endpoint documentation.
+
+## - Features -
 
 User Registration (with name, email, and password)
 
@@ -28,7 +32,7 @@ Expense Endpoints (create, view, delete expenses linked to a user)
 
 Environment-based secrets (.env for DB + JWT secret)
 
-## 🛠 Tech Stack
+## - Tech Stack -
 
 Backend: Node.js, Express
 
