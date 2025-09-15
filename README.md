@@ -1,36 +1,37 @@
-### Expense Tracker Custom API
-## 📌 Overview
+## 💸 Expense Tracker Custom API Overview
 
-A custom Node.js + Express + MongoDB (w/ Mongoose ODM) API for tracking expenses with secure JWT authentication.
-Users can register, log in with their name or email, and access protected endpoints (e.g., expenses).
+The Expense Tracker Custom API is a backend service built with Node.js, Express, and MongoDB (Mongoose ODM).
+It provides secure JWT-based authentication and CRUD operations for expense management.
 
 This project demonstrates:
 
-User authentication & password hashing
+User authentication & password hashing with bcryptjs
 
-Role of protected routes
+Protected routes using JWT middleware
 
-CRUD operations for expense tracking
+Full CRUD operations for expenses
 
-Clean project structure with controllers, routes, models, middleware, and utils
+Clean modular project structure (controllers, routes, models, middleware, utils)
+
 
 ## - API Documentation -
 
-See [API_DOCS.md](./API_DOCS.md) for full endpoint documentation.
+Full API reference with request/response examples can be found in [API_DOCS.md](./API_DOCS.md) 
+
 
 ## - Features -
 
-User Registration (with name, email, and password)
+🔐 User Registration (with name, email, and password)
 
-Login (by name or email + password)
+🔑 Login (by name or email + password)
 
-JWT Authentication (secure, token-based sessions)
+🪪 JWT Authentication (secure, token-based sessions)
 
-Protected Routes (accessible only with a valid token)
+🛡 Protected Routes (accessible only with a valid token)
 
-Expense Endpoints (create, view, delete expenses linked to a user)
+💰 Expense Endpoints (create, view, delete expenses linked to a user)
 
-Environment-based secrets (.env for DB + JWT secret)
+⚙️ Environment-based secrets (.env for DB connection + JWT secret)
 
 ## - Tech Stack -
 
