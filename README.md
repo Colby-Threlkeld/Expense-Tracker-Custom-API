@@ -1,7 +1,7 @@
 ### Expense Tracker Custom API
 ## 📌 Overview
 
-A custom Node.js + Express + MongoDB API for tracking expenses with secure JWT authentication.
+A custom Node.js + Express + MongoDB (w/ Mongoose ODM) API for tracking expenses with secure JWT authentication.
 Users can register, log in with their name or email, and access protected endpoints (e.g., expenses).
 
 This project demonstrates:
