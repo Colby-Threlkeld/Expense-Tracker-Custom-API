@@ -9,9 +9,9 @@ User authentication & password hashing with bcryptjs
 
 Protected routes using JWT middleware
 
-Full CRUD operations for expenses
+Full CRUD operations for expenses & Users
 
-Clean modular project structure (controllers, routes, models, middleware, utils)
+Clean & scalable modular project structure (controllers, routes, models, middleware, utils)
 
 
 ## - API Documentation -
@@ -35,12 +35,14 @@ Full API reference with request/response examples can be found in [API_DOCS.md](
 
 ## - Tech Stack -
 
+Language: JavaScript
+
 Backend: Node.js, Express
 
-Database: MongoDB (Mongoose ODM)
+Database: MongoDB (Mongoose ODM) MongoDB Atlas
 
 Authentication: JWT, bcryptjs
 
-Dev Tools: Nodemon, dotenv
+Dev Tools: Nodemon, dotenv, Postman (Testing)
 
 Version Control: Git + GitHub
