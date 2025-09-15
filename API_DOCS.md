@@ -5,7 +5,7 @@
 http://localhost:5000/api
 ```
 
-> ⚠️ All protected routes require the header:  
+> ⚠️ All protected routes require a token rewarded after login in the header:  
 ```
 Authorization: Bearer <JWT_TOKEN>
 ```
@@ -19,7 +19,7 @@ Authorization: Bearer <JWT_TOKEN>
 
 Register a new user.
 
-#### Request Body
+#### Request Body (raw - JSON)
 ```json
 {
   "name": "John Doe",
@@ -45,12 +45,18 @@ Log in with either email **or** username + password.
 
 #### Request Body (by email)
 ```json
-{ "email": "john@example.com", "password": "mypassword" }
+{
+"email": "john@example.com",
+"password": "mypassword"
+}
 ```
 
 #### Request Body (by username)
 ```json
-{ "name": "John Doe", "password": "mypassword" }
+{
+"name": "John Doe",
+"password": "mypassword"
+}
 ```
 
 #### Response `200 OK`
@@ -73,9 +79,11 @@ Log in with either email **or** username + password.
 
 #### Response `200 OK`
 ```json
-[
-  { "_id": "66e5...", "name": "John Doe", "email": "john@example.com" }
-]
+[{
+"_id": "66e5...",
+"name": "John Doe",
+"email": "john@example.com"
+}]
 ```
 
 #### Errors
@@ -108,7 +116,11 @@ Only the authenticated user can update **their own** record.
 
 #### Request Body (all fields optional)
 ```json
-{ "name": "New Name", "email": "new@example.com", "password": "newpass" }
+{
+"name": "New Name",
+"email": "new@example.com",
+"password": "newpass"
+}
 ```
 
 #### Response `200 OK`
@@ -245,10 +257,16 @@ Authorization: Bearer <token>
 
 #### Example Response `200 OK`
 ```json
-[
-  { "_id": "food", "total": 250.75, "count": 12 },
-  { "_id": "rent", "total": 1200, "count": 1 }
-]
+[{
+"_id": "food",
+"total": 250.75,
+"count": 12
+},
+  {
+"_id": "rent",
+"total": 1200,
+"count": 1
+}]
 ```
 
 #### Errors
@@ -305,49 +323,12 @@ npm run dev
 # or: node server.js / node app.js depending on your entry file
 ```
 
-## Secure Middleware (Recommended)
-```js
-const helmet = require('helmet');
-const cors = require('cors');
-
-app.use(helmet());
-app.use(cors({
-  origin: 'http://localhost:3000',          // frontend URL
-  methods: ['GET','POST','PUT','PATCH','DELETE'],
-  allowedHeaders: ['Content-Type','Authorization']
-}));
-```
-
 ## Mounting Routes (Example)
 ```js
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/expenses', require('./routes/expenseRoutes'));
 app.use('/api/protected', require('./routes/protectedRoute'));
-```
-
-## Testing with curl
-```bash
-# Register
-curl -X POST http://localhost:5000/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{"name":"John","email":"john@example.com","password":"pass"}'
-
-# Login
-curl -X POST http://localhost:5000/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"john@example.com","password":"pass"}'
-# -> copy the token below
-
-# Create expense
-curl -X POST http://localhost:5000/api/expenses \
-  -H "Authorization: Bearer <TOKEN>" \
-  -H "Content-Type: application/json" \
-  -d '{"amount":12.5,"currency":"USD","category":"food","type":"expense","merchant":"Chipotle"}'
-
-# List expenses (search + filters)
-curl -X GET "http://localhost:5000/api/expenses?q=chipotle&category=food" \
-  -H "Authorization: Bearer <TOKEN>"
 ```
 
 ## Conventions
@@ -358,4 +339,4 @@ curl -X GET "http://localhost:5000/api/expenses?q=chipotle&category=food" \
 
 ---
 
-Happy building! 🚀
+Thanks for checking out my project <3
