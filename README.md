@@ -21,17 +21,17 @@ Full API reference with request/response examples can be found in [API_DOCS.md](
 
 ## - Features -
 
-🔐 User Registration (with name, email, and password)
+  -User Registration (with name, email, and password)
 
-🔑 Login (by name or email + password)
+  -Login (by name or email + password)
 
-🪪 JWT Authentication (secure, token-based sessions)
+  -JWT Authentication (secure, token-based sessions)
 
-🛡 Protected Routes (accessible only with a valid token)
+  -Protected Routes (accessible only with a valid token)
 
-💰 Expense Endpoints (create, view, delete expenses linked to a user)
+  -Expense Endpoints (create, view, delete expenses linked to a user)
 
-⚙️ Environment-based secrets (.env for DB connection + JWT secret)
+  -Environment-based secrets (.env for DB connection + JWT secret)
 
 ## - Tech Stack -
 
